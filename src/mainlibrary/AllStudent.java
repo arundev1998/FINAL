@@ -249,7 +249,7 @@ public class AllStudent extends javax.swing.JFrame {
             //  String Column[]=null;
             String Search = "%" + SearchField.getText() + "%";
             try (Connection Con = DB.getConnection()) {
-                PreparedStatement ps = Con.prepareStatement("select * from Users where UserName like ?", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                PreparedStatement ps = Con.prepareStatement("SELECT * FROM students WHERE name = ?", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
                 ps.setString(1, Search);
                 ResultSet rs = ps.executeQuery();
 
