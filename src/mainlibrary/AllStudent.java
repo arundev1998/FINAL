@@ -283,7 +283,10 @@ public class AllStudent extends javax.swing.JFrame {
                 }
 
                 Con.close();
-            } catch (Exception e) {
+                } catch (SQLException e) {
+                 System.out.println("Database error: " + e.getMessage());}
+                 // Catch specific exceptions related to database operation "SQLException" has been added
+             catch (Exception e) {
                 System.out.println(e);
             }
         } else if (AuthorRadio.isSelected()) {
