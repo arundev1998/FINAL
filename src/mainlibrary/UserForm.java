@@ -20,7 +20,23 @@ public class UserForm extends javax.swing.JFrame {
     public UserForm() {
         initComponents();
     }
+    Properties prop = new Properties();
+InputStream input = null;
 
+try {
+    input = new FileInputStream("config.properties");
+    prop.load(input);
+} catch (IOException ex) {
+    ex.printStackTrace();
+} finally {
+    if (input != null) {
+        try {
+            input.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,23 +64,23 @@ public class UserForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        jLabel1.setText("User Name");
+        jLabel1.setFont(new java.awt.Font(prop.getProperty("fontName"), 0, Integer.parseInt(prop.getProperty("fontSize"))); // NOI18N
+        jLabel1.setText(prop.getProperty("userNameLabel"));
 
-        jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        jLabel3.setText("Email");
+        jLabel3.setFont(new java.awt.Font(prop.getProperty("fontName"), 0, Integer.parseInt(prop.getProperty("fontSize"))); // NOI18N
+        jLabel3.setText(prop.getProperty("emailLabel"));
 
-        jLabel4.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        jLabel4.setText("Password");
+        jLabel4.setFont(new java.awt.Font(prop.getProperty("fontName"), 0, Integer.parseInt(prop.getProperty("fontSize"))); // NOI18N
+        jLabel4.setText(prop.getProperty("passwordLabel"));
 
-        jLabel5.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        jLabel5.setText("Academic");
+        jLabel5.setFont(new java.awt.Font(prop.getProperty("fontName"), 0, Integer.parseInt(prop.getProperty("fontSize"))); // NOI18N
+        jLabel5.setText(prop.getProperty("academicLabel"));
 
-        jLabel6.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        jLabel6.setText("Program");
+        jLabel6.setFont(new java.awt.Font(prop.getProperty("fontName"), 0, Integer.parseInt(prop.getProperty("fontSize"))); // NOI18N
+        jLabel6.setText(prop.getProperty("programLabel"));
 
-        jLabel7.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        jLabel7.setText("Year");
+        jLabel7.setFont(new java.awt.Font("prop.getProperty("fontName")", 0, Integer.parseInt(prop.getProperty("fontSize"))); // NOI18N
+        jLabel7.setText(prop.getProperty("yearLabel"));
 
         UserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,23 +106,23 @@ public class UserForm extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        jButton1.setText("ADD USER");
+        jButton1.setFont(new java.awt.Font("prop.getProperty("fontName")", 0, Integer.parseInt(prop.getProperty("fontSize"))); // NOI18N
+        jButton1.setText(prop.getProperty("addUserButtonText");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Back");
+        jButton2.setText(prop.getProperty("backButtonText");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
-        jLabel8.setText("Position");
+        jLabel8.setFont(new java.awt.Font("prop.getProperty("fontName")", 0, Integer.parseInt(prop.getProperty("fontSize"))); // NOI18N
+        jLabel8.setText(prop.getProperty("positionLabel");
 
         Email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
